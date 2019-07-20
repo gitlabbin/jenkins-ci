@@ -85,7 +85,7 @@ data:
       <containers>
         <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
           <name>jnlp</name>
-          <image>idealo/jenkins-slave-image-mgmt-centos7:latest</image>
+          <image>briangxchen/jenkins-slave-image-mgmt:latest</image>
           <privileged>false</privileged>
           <alwaysPullImage>true</alwaysPullImage>
           <workingDir>/tmp</workingDir>
