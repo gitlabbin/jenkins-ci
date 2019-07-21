@@ -8,7 +8,7 @@ LABEL org.centos.component="jenkins-slave-image-mgmt" \
       io.openshift.tags="openshift,jenkins,slave,copy"
 USER root
 
-RUN yum install -y git bzip2 gcc gcc-c++
+RUN yum install -y git bzip2 jq 
 
 
 RUN INSTALL_PKGS="skopeo" && \
