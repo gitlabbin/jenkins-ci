@@ -8,8 +8,9 @@ LABEL org.centos.component="jenkins-slave-image-mgmt" \
       io.openshift.tags="openshift,jenkins,slave,copy"
 USER root
 
-RUN yum install -y git bzip2 jq 
-
+RUN yum install epel-release -y
+RUN yum install jq -y
+RUN yum install -y git bzip2 
 
 RUN INSTALL_PKGS="skopeo" && \
     yum install -y --setopt=tsflags=nodocs \
