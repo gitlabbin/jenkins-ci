@@ -1,4 +1,4 @@
-FROM openshift/jenkins-agent-nodejs-8-centos7
+FROM openshift/jenkins-slave-base-centos7
 
 LABEL org.centos.component="jenkins-slave-artillery" \
       name="jenkins-slave-artillery" \
@@ -10,7 +10,7 @@ USER root
 
 RUN yum install epel-release -y
 RUN yum install jq -y
-RUN yum install -y git bzip2 
+RUN yum install -y git bzip2 npm
 
 RUN npm install -g artillery@1.6.0-28
 
