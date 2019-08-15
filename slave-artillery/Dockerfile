@@ -8,11 +8,14 @@ LABEL org.centos.component="jenkins-slave-artillery" \
       io.openshift.tags="openshift,jenkins,slave,load"
 USER root
 
+RUN curl -sL https://rpm.nodesource.com/setup_8.x | bash -
+
+RUN yum install nodejs -y
 RUN yum install epel-release -y
 RUN yum install jq -y
-RUN yum install -y git bzip2 npm
+RUN yum install -y git bzip2
 
-RUN npm install -g artillery
+RUN npm install -g artillery --allow-root --unsafe-perm=true
 
 RUN yum clean all
 
