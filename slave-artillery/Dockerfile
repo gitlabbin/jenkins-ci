@@ -12,7 +12,7 @@ RUN yum install epel-release -y
 RUN yum install jq -y
 RUN yum install -y git bzip2 npm
 
-RUN npm install -g artillery@1.6.0-28
+RUN npm install -g artillery
 
 RUN yum clean all
 
