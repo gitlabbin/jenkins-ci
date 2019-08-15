@@ -17,6 +17,17 @@ RUN yum install -y git bzip2
 
 RUN npm install -g artillery --allow-root --unsafe-perm=true
 
+RUN yum -y --setopt=tsflags=nodocs update && \
+    yum -y --setopt=tsflags=nodocs install socat && \
+    yum -y --setopt=tsflags=nodocs install wget && \
+    yum -y --setopt=tsflags=nodocs install git && \
+    yum -y --setopt=tsflags=nodocs install tmux && \
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
+    yum -y install ./google-chrome-stable_current_x86_64.rpm
+
 RUN yum clean all
+RUN google-chrome --version
+RUN node --version
+RUN npm --version
 
 USER 1001
