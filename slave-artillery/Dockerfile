@@ -24,6 +24,7 @@ RUN yum -y --setopt=tsflags=nodocs update && \
     yum -y --setopt=tsflags=nodocs install tmux && \
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
     yum -y install ./google-chrome-stable_current_x86_64.rpm
+RUN npm install -g chrome-headless-render-pdf
 
 RUN yum clean all
 RUN google-chrome --version
