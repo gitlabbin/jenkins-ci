@@ -25,6 +25,7 @@ RUN yum -y --setopt=tsflags=nodocs update && \
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
     yum -y install ./google-chrome-stable_current_x86_64.rpm
 RUN npm install -g chrome-headless-render-pdf
+RUN npm install -g node-localstorage
 
 RUN yum clean all
 RUN google-chrome --version
